@@ -1,0 +1,35 @@
+<div style="display: flex; flex-direction: row; height: 70vh">
+
+  <div style="margin: 2rem; width: 40vw;">
+    <strong style="padding: 0.5rem;">Documents</strong>
+    <table style="max-height: 30vh; overflow: auto;">
+      <tr *ngFor="let file of files">
+        <td>{{file.fileName}}</td>
+        <td style="padding: 0.5em">
+          <a href="#" (click)="onView(file)">View</a> |
+          <a href="#" (click)="onEdit(file)">Edit</a> |
+          <a href="#" (click)="onDelete(file)">Delete</a>
+      </td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <form enctype="multipart/form-data" (submit)="onSubmit($event)">
+      <label for="file" style="padding: 1rem;">Add a file</label>
+      <input type="file" name="file" id="file" />
+      <input type="submit" value="Upload" />
+    </form>
+
+    <hr />
+    <strong style="padding: 0.5rem;">Events received</strong> <button (click)="clearEvents()">Clear events</button>
+    <div style="max-height: 30vh; overflow: auto;">
+      <div *ngFor="let event of events" style="padding: 0.5rem; word-break: break-all;">
+        {{event}}
+      </div>
+    </div>
+
+  </div>
+
+  <div id="frameholder" style="width: 50vw; height: 50vw"></div>
+</div>

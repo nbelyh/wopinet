@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Edit";
+}
+
+<html>
+<head>
+    <style>
+        html, body, body, iframe {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            border: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <form id="office_form" name="office_form" target="office_frame" action='@ViewData["wopi_src"]' method="post">
+        <input name="access_token" value='@ViewData["wopi_access_token"]' type="hidden" />
+        <input name="access_token_ttl" value='@ViewData["wopi_access_token_ttl"]' type="hidden" />
+    </form>
+
+    <span id="frameholder"></span>
+
+    <script type="text/javascript">
+        var frameholder = document.getElementById("frameholder");
+        var office_frame = document.createElement("iframe");
+        office_frame.name = "office_frame";
+        office_frame.id = "office_frame";
+        frameholder.appendChild(office_frame);
+        document.getElementById("office_form").submit();
+    </script>
+</body>
+</html>

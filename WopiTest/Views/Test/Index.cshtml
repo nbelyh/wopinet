@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+</head>
+<body>
+    @foreach (var file in Model) 
+    {
+        <div style="padding: 0.5em">
+            @file.FileName 
+            | <a href="/view/@System.IO.Path.GetExtension(file.FileName)/@file.FileId">view</a>
+            | <a href="/edit/@System.IO.Path.GetExtension(file.FileName)/@file.FileId">edit</a> 
+            | <a href="/delete/@file.FileId">delete</a>
+        </div>
+    }
+    <hr />
+    <form enctype="multipart/form-data" method="post" action="/upload">
+        <input type="file" name="file" />
+        <input type="submit" value="Upload" />
+    </form>
+</body>
+</html>
