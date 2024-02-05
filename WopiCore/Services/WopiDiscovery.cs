@@ -305,7 +305,7 @@ namespace WopiCore.Services
                 try
                 {
                     rsaProvider.ImportCspBlob(Convert.FromBase64String(proofFromDiscovery));
-                    return rsaProvider.VerifyData(expectedProof, new SHA256CryptoServiceProvider(), Convert.FromBase64String(proofFromRequest));
+                    return rsaProvider.VerifyData(expectedProof, SHA256.Create(), Convert.FromBase64String(proofFromRequest));
                 }
                 catch (FormatException)
                 {

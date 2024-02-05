@@ -35,7 +35,7 @@ namespace WopiCore.Models
             if (StatusCode != HttpStatusCode.OK)
                 return httpResponseMessage;
 
-            return new JsonResult(this, new System.Text.Json.JsonSerializerOptions { IgnoreNullValues = true });
+            return new JsonResult(this, new System.Text.Json.JsonSerializerOptions { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull });
         }
     }
 }
