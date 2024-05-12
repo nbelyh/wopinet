@@ -16,9 +16,9 @@ If configured correctly, should pass the WOPI Validator for read/edit.
 The repo also contains a simple frontend anguar sample.
 
 References:
-[WOPIFramework](https://github.com/apulliam/WOPIFramework) - using as a base (rewritten)
-[WopiHost](https://github.com/petrsvihlik/WopiHost) - not using, because of in-memory management for locks, and the lack of PROOF support
-[PnP-WOPI](https://github.com/OfficeDev/PnP-WOPI) - not using, too old
+- [WOPIFramework](https://github.com/apulliam/WOPIFramework) - using as a base (rewritten)
+- [WopiHost](https://github.com/petrsvihlik/WopiHost) - not using, because of in-memory management for locks, and the lack of PROOF support
+- [PnP-WOPI](https://github.com/OfficeDev/PnP-WOPI) - not using, too old
 
 # Build and Test
 
